@@ -1,0 +1,10 @@
+{% assign cardList = include.cards | split: "," %}
+<div class="cards cards-{{ include.position || '' }}">
+	<div class="cards-wrapper" style="--cards:{{ cardList.size }};--curvature:{{include.arch | default: 10}}deg;--curvature-hover:{{include.hover | default: 20}}deg;">
+		{%- for card in cardList -%}
+			<div class="item">
+				<img src="/assets/images/cards/{{ card }}.svg" alt="{{ card }}" />
+			</div>
+		{%- endfor -%}
+	</div>
+</div>
