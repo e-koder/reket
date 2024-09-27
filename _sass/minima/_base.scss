@@ -27,6 +27,7 @@ body {
   min-height: 100vh;
   flex-direction: column;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 
@@ -55,7 +56,13 @@ h1 {
   margin: 20px;
   margin-top: 0;
   border-bottom: 6px double red;
+
+  @include media-query($on-palm) {
+    font-size: 8vw;
+  }
 }
+
+
 
 h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight;
@@ -70,6 +77,7 @@ h2, h3, h4, h5, h6 {
  */
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+  overflow: hidden;
 }
 
 
@@ -283,4 +291,8 @@ p {
 
 .flex {
   display: flex;
+}
+
+.flex-gap-md {
+  gap: 16px;
 }

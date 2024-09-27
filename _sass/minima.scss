@@ -23,7 +23,7 @@ $grey-color-dark:  #4a4a4a !default;
 $table-text-align: left !default;
 
 // Width of the content area
-$content-width:    1200px !default;
+$content-width:    1000px !default;
 
 $on-palm:          600px !default;
 $on-laptop:        1000px !default;
@@ -49,5 +49,6 @@ $on-laptop:        1000px !default;
 @import
   "minima/base",
   "minima/layout",
+  "minima/cards",
   "minima/syntax-highlighting"
 ;
