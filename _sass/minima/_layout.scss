@@ -19,13 +19,13 @@
 }
 
 .site-title {
-	font-size: 140px;
+	font-size: 160px;
 	font-family: "PT Serif";
 	font-weight: 300;
 	color: black;
 	// line-height: $base-line-height * $base-font-size * 2.25;
 	letter-spacing: 100px;
-	padding-left: 44px;
+	padding-left: 24px;
 	margin-bottom: 0;
 	float: left;
     line-height: 1;
@@ -33,9 +33,9 @@
     width: 100%;
 
 	@include media-query($on-laptop) {
-        font-size: 14vw;
+        font-size: 16vw;
         letter-spacing: 10vw;
-        padding-left: 6vw;
+        padding-left: 4vw;
 	}
 
 	&:hover {
@@ -178,13 +178,11 @@
 }
 
 .post {
-	padding: 24px;
 }
 
 .post-list {
 	margin-left: 0;
 	list-style: none;
-	padding: 24px;
 	// text-align: right;
 	// border: 9px double #FFC100;
 
