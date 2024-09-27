@@ -33,9 +33,9 @@
     width: 100%;
 
 	@include media-query($on-laptop) {
-        font-size: 16vw;
+        font-size: 14vw;
         letter-spacing: 10vw;
-        padding-left: 4vw;
+        padding-left: 6vw;
 	}
 
 	&:hover {
