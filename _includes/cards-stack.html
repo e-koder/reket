@@ -1,0 +1,40 @@
+{% assign cardList = include.cards | split: "," %}
+<div class="cards-stack" style="--cards: {{cardList.size}}">
+	{%- for card in cardList -%}
+	<div class="cards-stack-item" data-index="{{forloop.index}}" style="--index: {{forloop.index}}">
+		<img src="/assets/images/cards/{{ card }}.svg" alt="{{ card }}" />
+	</div>
+	{%- endfor -%}
+</div>
+
+<script>
+
+	let currentIndex = 1;
+	let movement = 0;
+
+	let lastKnownScrollPosition = 0; 
+
+	const container = document.querySelector('.cards-stack');
+
+	const spacingVh = parseFloat(getComputedStyle(container).getPropertyValue('--space'));
+	const spacing = spacingVh * window.innerHeight / 100;
+
+	setCurrentActive = (index) => {
+		currentIndex = index;
+		document.querySelector(`.cards-stack-item.active`)?.classList.remove('active');
+		document.querySelector(`.cards-stack-item[data-index="${index}"]`)?.classList.add('active');
+	}
+
+	setCurrentActive(1);
+
+	document.addEventListener('scroll', (e) => {
+		difference = window.scrollY - lastKnownScrollPosition;
+		lastKnownScrollPosition = window.scrollY;
+		let activeIndex = Math.floor((window.scrollY - 40) / spacing) + 1;
+		if (activeIndex < 1) {
+			activeIndex = 1;
+		}
+		setCurrentActive(activeIndex);
+	});
+
+</script>

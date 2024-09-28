@@ -1,0 +1,32 @@
+
+
+.cards-stack {
+
+	position: relative;
+    min-height: calc(60vh + 6.5vh * var(--cards));
+	--space: 6.5vh;
+	--cards: 0;
+}
+
+.cards-stack-item {	
+
+	position: absolute;
+	top: calc(var(--space) * var(--index));
+	transition: ease-out 150ms transform;
+	transform: translateX(-50%);
+    left: 50%;
+
+	img {
+		border-radius: 12px;
+		overflow: hidden;
+		height: 60vh;
+		max-width: unset;
+		
+	}
+
+	&.active ~ .cards-stack-item {
+		// z-index: 100;
+		transform: translateY(80%);
+		transform-origin: left bottom;
+	}
+}

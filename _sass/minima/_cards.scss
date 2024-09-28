@@ -50,7 +50,7 @@
 
 	@for $i from 0 through 12 {
 		&:nth-child(#{$i}) {
-			--index: #{$i} - 1;
+			--index: calc(#{$i} - 1);
 		}
 	}
 
@@ -89,3 +89,4 @@
 	.img {
 	}
 }
+
