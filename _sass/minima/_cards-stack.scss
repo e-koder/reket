@@ -1,11 +1,12 @@
 
 
 .cards-stack {
-
-	position: relative;
-    min-height: calc(60vh + 6.5vh * var(--cards));
-	--space: 6.5vh;
+	--space: 6vh;
 	--cards: 0;
+	--card-height: 50vh;
+	--active: 0;
+	position: relative;
+    min-height: calc(60vh + var(--space) * var(--cards));
 }
 
 .cards-stack-item {	
@@ -13,20 +14,31 @@
 	position: absolute;
 	top: calc(var(--space) * var(--index));
 	transition: ease-out 150ms transform;
-	transform: translateX(-50%);
+	
+	--distance: calc(var(--index) - var(--active));
+	transform: translateX(calc( -50%));
+
+	// transform: translateY(60%) translateX(calc(var(--distance) * 10% - 50%));
     left: 50%;
 
 	img {
-		border-radius: 12px;
+		border-radius: 2vh;
 		overflow: hidden;
-		height: 60vh;
+		height: var(--card-height);
 		max-width: unset;
-		
+		filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.3));
+
+	}
+
+	&.active {
+		transform: translateX(-50%);
 	}
 
 	&.active ~ .cards-stack-item {
 		// z-index: 100;
-		transform: translateY(80%);
+		--distance: calc(var(--index) - var(--active));
+		left: 50%;
+		transform: translateY(60%) translateX(calc(var(--distance) * 10% - 50%));
 		transform-origin: left bottom;
 	}
 }

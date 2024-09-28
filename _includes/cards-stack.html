@@ -11,26 +11,43 @@
 
 	let currentIndex = 1;
 	let movement = 0;
+	let totalCards = {{cardList.size}};
 
 	let lastKnownScrollPosition = 0; 
 
 	const container = document.querySelector('.cards-stack');
 
 	const spacingVh = parseFloat(getComputedStyle(container).getPropertyValue('--space'));
-	const spacing = spacingVh * window.innerHeight / 100;
+	const cardVh = parseFloat(getComputedStyle(container).getPropertyValue('--card-height'));
+	
+	vhToPx = (value) => {
+		return value * window.innerHeight / 100;
+	}
 
 	setCurrentActive = (index) => {
 		currentIndex = index;
+		setContainerVariables(container, index);
 		document.querySelector(`.cards-stack-item.active`)?.classList.remove('active');
 		document.querySelector(`.cards-stack-item[data-index="${index}"]`)?.classList.add('active');
 	}
+
+	setContainerVariables = (parent, index) => {
+		parent.style = `--cards: ${totalCards}; --active: ${index}`;
+	}
+
+	const spacing = vhToPx(spacingVh);
+	const cardSize = vhToPx(cardVh);
+
+	const emptySpaceSize = window.innerHeight - cardSize;
 
 	setCurrentActive(1);
 
 	document.addEventListener('scroll', (e) => {
 		difference = window.scrollY - lastKnownScrollPosition;
 		lastKnownScrollPosition = window.scrollY;
-		let activeIndex = Math.floor((window.scrollY - 40) / spacing) + 1;
+		console.log('a');
+		const containerY = container.getBoundingClientRect().top;
+		let activeIndex = Math.floor((-containerY + emptySpaceSize / 2) / spacing);
 		if (activeIndex < 1) {
 			activeIndex = 1;
 		}
