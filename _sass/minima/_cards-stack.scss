@@ -1,10 +1,9 @@
 
 
 .cards-stack {
-	--space: 6vh;
+	--space: 3vh;
 	--cards: 0;
 	--card-height: 50vh;
-	--active: 0;
 	position: relative;
     min-height: calc(60vh + var(--space) * var(--cards));
 }
@@ -15,8 +14,8 @@
 	top: calc(var(--space) * var(--index));
 	transition: ease-out 200ms transform;
 	
-	--distance: calc(var(--index) - var(--active));
-	transform: translateX(calc( -50%));
+	transform: translateX(calc(-50%)) rotateZ(-2deg);
+	transform-origin: bottom left;
 
 	// transform: translateY(60%) translateX(calc(var(--distance) * 10% - 50%));
     left: 50%;
@@ -34,9 +33,8 @@
 
 	&.active ~ .cards-stack-item {
 		// z-index: 100;
-		--distance: calc(var(--index) - var(--active));
 		left: 50%;
-		transform: translateY(60%) translateX(calc(var(--distance) * 10% - 50%));
-		transform-origin: left bottom;
+		transform: translateY(60%) translateX(-50%) rotateZ(calc(var(--index) * 2deg));
+		transform-origin: bottom left;
 	}
 }
