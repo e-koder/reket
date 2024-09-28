@@ -14,7 +14,7 @@
 	top: calc(var(--space) * var(--index));
 	transition: ease-out 200ms transform;
 	
-	transform: translateX(calc(-50%)) rotateZ(-2deg);
+	transform: translateX(calc(-50%));
 	transform-origin: bottom left;
 
 	// transform: translateY(60%) translateX(calc(var(--distance) * 10% - 50%));
@@ -34,7 +34,7 @@
 	&.active ~ .cards-stack-item {
 		// z-index: 100;
 		left: 50%;
-		transform: translateY(60%) translateX(-50%) rotateZ(calc(var(--index) * 2deg));
+		transform: translateY(60%) translateX(-50%);
 		transform-origin: bottom left;
 	}
 }
