@@ -13,7 +13,7 @@
 
 	position: absolute;
 	top: calc(var(--space) * var(--index));
-	transition: ease-out 150ms transform;
+	transition: ease-out 300ms transform;
 	
 	--distance: calc(var(--index) - var(--active));
 	transform: translateX(calc( -50%));
@@ -30,6 +30,7 @@
 
 	&.active {
 		transform: translateX(-50%);
+		transition: ease-out 150ms transform;
 	}
 
 	&.active ~ .cards-stack-item {
