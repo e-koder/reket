@@ -25,10 +25,16 @@
 	}
 
 	setCurrentActive = (index) => {
-		currentIndex = index;
-		setContainerVariables(container, index);
-		document.querySelector(`.cards-stack-item.active`)?.classList.remove('active');
-		document.querySelector(`.cards-stack-item[data-index="${index}"]`)?.classList.add('active');
+		const activeElement = document.querySelector(`.cards-stack-item.active`);
+		const nextActiveElement = document.querySelector(`.cards-stack-item[data-index="${index}"]`);
+		if (activeElement !== nextActiveElement) {
+			currentIndex = index;
+			setContainerVariables(container, index);
+			document.querySelector(`.cards-stack-item.active`)?.classList.remove('active');
+			document.querySelector(`.cards-stack-item[data-index="${index}"]`)?.classList.add('active');
+		}
+		
+		
 	}
 
 	setContainerVariables = (parent, index) => {
