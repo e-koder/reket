@@ -5,5 +5,5 @@
 layout: home
 ---
 
-{% include cards-stack.html cards="tender,reket-7,1,3,prekured,krazhba,reket,5,rek,10,tat,fativrski" %}
+{% include cards-stack.html cards="reket-7,1,2,3,4,5,10,krazhba,rek,tat,fativrski" %}
 
