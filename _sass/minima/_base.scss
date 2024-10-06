@@ -53,12 +53,11 @@ h1 {
   line-height: 1;
   padding: 10px;
   padding-left: 0;
-  margin: 20px;
-  margin-top: 0;
+  margin: 20px 0;
   border-bottom: 6px double red;
 
   @include media-query($on-palm) {
-    font-size: 8vw;
+    font-size: 10vw;
   }
 }
 
@@ -66,8 +65,8 @@ h1 {
 
 h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight;
-  padding: 10px;
-  margin: 10px;
+  padding: 10px 0;
+  margin: 10px 0;
 }
 
 
@@ -203,15 +202,12 @@ pre {
   max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
   margin-right: auto;
   margin-left: auto;
-  padding-right: $spacing-unit;
-  padding-left: $spacing-unit;
+  padding: 0 40px;
   @extend %clearfix;
 
   @include media-query($on-laptop) {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
     max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-    padding-right: $spacing-unit * 0.5;
-    padding-left: $spacing-unit * 0.5;
   }
 }
 
@@ -279,8 +275,7 @@ table {
 
 p {
   font-size: 18px;
-  padding: 0 24px;
-  display: flex;
+  padding: 0;
   gap: 16px;
   flex: 1;
   
