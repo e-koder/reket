@@ -278,8 +278,6 @@ a.post-link {
     margin-left: -50px;
 
 	@include media-query($on-palm) {
-		margin: auto;
-		width: 100%;
-		order: -1;
+		display: none;
 	}
 }
