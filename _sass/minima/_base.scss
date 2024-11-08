@@ -111,6 +111,10 @@ ul, ol {
   margin-left: $spacing-unit;
 }
 
+ul li {
+  margin-bottom: 8px;
+}
+
 li {
   > ul,
   > ol {
