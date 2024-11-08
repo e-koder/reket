@@ -272,14 +272,14 @@ a.post-link {
 	}
 }
 
-// .item .img {
-// 	&:hover {
-// 		animation: hoverEffect 1s ease-in-out infinite alternate forwards;
-// 	}
-// }
+.reket-video {
+	width: 360px;
+    margin-top: -50px;
+    margin-left: -50px;
 
-// @keyframes hoverEffect {
-// 	to {
-// 		translate: 0px 12px;
-// 	}
-// }
+	@include media-query($on-palm) {
+		margin: auto;
+		width: 100%;
+		order: -1;
+	}
+}
